@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced User Registration Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        header, section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            background-color: #8ea368;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            display: grid;
+            grid-gap: 15px;
+        }
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        legend {
+            padding: 0 10px;
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: 2px solid #3498db;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .required:after {
+            content: " *";
+            color: red;
+        }
+        video, audio {
+            width: 100%;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Enhanced User Registration</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About This Form</a></li>
+                <li><a href="#registration">Registration</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Our Service</h2>
+        <p>Welcome to our enhanced registration platform. Please fill out the form below to create your account.</p>
+        
+        <h3>Key Features:</h3>
+        <ol type="a">
+            <li>Secure account creation</li>
+            <li>Personalized dashboard</li>
+            <li>24/7 customer support</li>
+            <li>Exclusive member benefits</li>
+        </ol>
+
+        <video controls poster="https://via.placeholder.com/800x450">
+            <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <section id="registration">
+        <h2>Registration Form</h2>
+        <form id="userForm" action="/submit" method="post" novalidate>
+            <fieldset>
+                <legend>Personal Information</legend>
+                
+                <div class="form-group">
+                    <label for="fullname" class="required">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="John Doe" required 
+                           pattern="[A-Za-z ]{3,}" title="At least 3 alphabetical characters">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="required">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="user@example.com" required
+                           autocomplete="email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" class="required">Password</label>
+                    <input type="password" id="password" name="password" required 
+                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                           title="Must contain at least 8 characters, including uppercase, lowercase, and number">
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password" class="required">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthdate">Date of Birth</label>
+                    <input type="date" id="birthdate" name="birthdate" min="1900-01-01" max="2023-12-31">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Contact Details</legend>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="123-456-7890" 
+                           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890">
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Street Address</label>
+                    <input type="text" id="address" name="address" autocomplete="street-address">
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="">Select a country</option>
+                        <option value="KE">Kenya</option>
+                        <option value="UG">Uganda</option>
+                        <option value="TZ">Tanzania</option>
+                        <option value="SO">Somalia</option>
+                        <option value="RW">Rwanda</option>
+                        <option value="SS">South Sudan</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="zipcode">Zip Code</label>
+                    <input type="text" id="zipcode" name="zipcode" pattern="\d{5}(-\d{4})?" 
+                           title="5 or 9 digit zip code">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferences</legend>
+                
+                <div class="form-group">
+                    <label>Preferred Contact Method:</label>
+                    <div>
+                        <input type="radio" id="contact-email" name="contact-method" value="email" checked>
+                        <label for="contact-email" style="display: inline;">Email</label>
+                        
+                        <input type="radio" id="contact-phone" name="contact-method" value="phone">
+                        <label for="contact-phone" style="display: inline;">Phone</label>
+                        
+                        <input type="radio" id="contact-text" name="contact-method" value="text">
+                        <label for="contact-text" style="display: inline;">Text Message</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Interests (Select all that apply):</label>
+                    <div>
+                        <input type="checkbox" id="interest-tech" name="interests" value="technology">
+                        <label for="interest-tech" style="display: inline;">Technology</label><br>
+                        
+                        <input type="checkbox" id="interest-sports" name="interests" value="sports">
+                        <label for="interest-sports" style="display: inline;">Sports</label><br>
+                        
+                        <input type="checkbox" id="interest-arts" name="interests" value="arts">
+                        <label for="interest-arts" style="display: inline;">Arts</label><br>
+                        
+                        <input type="checkbox" id="interest-travel" name="interests" value="travel">
+                        <label for="interest-travel" style="display: inline;">Travel</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="newsletter">Subscribe to Newsletter</label>
+                    <select id="newsletter" name="newsletter">
+                        <option value="yes">Yes, please!</option>
+                        <option value="no">No, thanks</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="profile-color">Profile Color</label>
+                    <input type="color" id="profile-color" name="profile-color" value="#3498db">
+                </div>
+                
+                <div class="form-group">
+                    <label for="user-experience">How would you rate your experience with similar services?</label>
+                    <input type="range" id="user-experience" name="user-experience" min="1" max="10" value="5">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional Information</legend>
+                
+                <div class="form-group">
+                    <label for="bio">Short Biography</label>
+                    <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="profile-pic">Profile Picture</label>
+                    <input type="file" id="profile-pic" name="profile-pic" accept="image/*">
+                </div>
+                
+                <div class="form-group">
+                    <label for="website">Your Website</label>
+                    <input type="url" id="website" name="website" placeholder="https://example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="reference-id">Reference ID (readonly)</label>
+                    <input type="text" id="reference-id" name="reference-id" value="USER-2023-001" readonly>
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms" class="required">I agree to the terms and conditions</label>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Submit Registration</button>
+                <button type="reset">Reset Form</button>
+            </div>
+        </form>
+    </section>
+
+    <section id="benefits">
+        <h2>Member Benefits</h2>
+        <p>As a registered member, you'll enjoy these exclusive benefits:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Benefit</th>
+                    <th>Description</th>
+                    <th>Availability</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Priority Support</td>
+                    <td>24/7 access to our premium support team</td>
+                    <td>Immediate</td>
+                </tr>
+                <tr>
+                    <td>Exclusive Content</td>
+                    <td>Access to members-only articles and resources</td>
+                    <td>After verification</td>
+                </tr>
+                <tr>
+                    <td>Discounts</td>
+                    <td>Special pricing on partner products</td>
+                    <td>After 30 days</td>
+                </tr>
+                <tr>
+                    <td>Community Access</td>
+                    <td>Join our private member forums</td>
+                    <td>Immediate</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <audio controls>
+            <source src="https://samplelib.com/lib/preview/mp3/sample-3s.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Samuel Oyuga. All rights reserved.</p>
+        <address>
+            Contact us at <a href="mailto: samoyuga@gmail.com">samoyuga@gmail.com</a>
+        </address>
+    </footer>
+
+    <script>
+        // Client-side password confirmation validation
+        document.getElementById('userForm').addEventListener('submit', function(event) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
